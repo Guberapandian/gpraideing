@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Auto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Book an Auto</h2>
+        <form action="/book" method="post">
+            <div class="mb-3">
+                <label for="name" class="form-label">Your Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="pickup" class="form-label">Pickup Location</label>
+                <input type="text" class="form-control" id="pickup" name="pickup" required>
+            </div>
+            <div class="mb-3">
+                <label for="dropoff" class="form-label">Drop-off Location</label>
+                <input type="text" class="form-control" id="dropoff" name="dropoff" required>
+            </div>
+            <div class="mb-3">
+                <label for="ride_time" class="form-label">Preferred Time</label>
+                <input type="datetime-local" class="form-control" id="ride_time" name="ride_time" required>
+            </div>
+            <button type="submit" class="btn btn-success">Book Auto</button>
+        </form>
+    </div>
+</body>
+</html>
