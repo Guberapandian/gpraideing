@@ -4,26 +4,23 @@ FROM python:3.9-slim
 # Set the working directory in the container
 WORKDIR /app
 
-# Copy the current directory contents into the container at /app
-COPY . /app
-
+# Copy the requirements file first
 COPY requirements.txt .
 
+# Upgrade pip and install dependencies
 RUN pip install --upgrade pip
-
-RUN pip install flask
-
-# Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Copy the current directory contents into the container
 COPY . .
 
-# Make port 5000 available to the world outside this container
+# Expose the port on which Flask will run (adjust based on app port)
 EXPOSE 5000
 
-# Define environment variable
+# Define environment variables for Flask
 ENV FLASK_APP=app.py
 ENV FLASK_RUN_HOST=0.0.0.0
+ENV FLASK_RUN_PORT=5000
 
-# Run the application
-CMD ["flask", "run"]
+# Run the Flask application
+CMD ["flask", "run", "--port=5000"]
