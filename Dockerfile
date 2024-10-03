@@ -21,7 +21,9 @@ EXPOSE 5000
 ENV FLASK_APP=app.py
 ENV FLASK_RUN_HOST=0.0.0.0
 ENV FLASK_RUN_PORT=5000
-ENV FLASK_ENV=development  # Add Flask development mode
+
+# Add Flask development mode
+ENV FLASK_ENV=development
 
 # Run the Flask application
 CMD ["flask", "run", "--port=5000"]
